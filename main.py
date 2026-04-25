@@ -265,7 +265,8 @@ df_under_20 = pd.read_sql("""
     JOIN customers c    ON e.employeeNumber = c.salesRepEmployeeNumber
     JOIN orders ord     ON c.customerNumber = ord.customerNumber
     JOIN orderdetails od ON ord.orderNumber = od.orderNumber
-    WHERE od.productCode IN (SELECT productCode FROM low_reach_products)
+    WHERE od.productCode IN (SELECT productCode FROM low_reach_products) 
+    ORDER BY e.employeeNumber
 """, conn)
 df_under_20
 
