@@ -60,7 +60,7 @@ pd.read_sql("""SELECT * FROM sqlite_master;""", conn)
 
 # The company would like to let Boston employees go remote but need to know more information about who is working in that office. Return the first and last names and the job titles for all employees in Boston.
 # CodeGrade step1
-df_boston=pd.read_sql("SELECT e.firstName,e.lastName,e.jobTitle FROM employees e JOIN offices o ON e.officecode=o.officecode WHERE o.city='Boston' ",conn)
+df_boston=pd.read_sql("SELECT e.firstName,e.lastName FROM employees e JOIN offices o ON e.officecode=o.officecode WHERE o.city='Boston' ",conn)
 df_boston
 
 
